@@ -1,4 +1,4 @@
--- Which category has the highest success percentage? How many projects have been successful?
+-- Which category has the highest success percentage?
 SELECT
     category,
     COUNT(state)
@@ -11,3 +11,10 @@ category, COUNT(state)
 Film & Video, 62694
 */
 
+-- How many projects have been successful?
+SELECT
+    COUNT(state)
+FROM projects
+WHERE state = 'Successful';
+
+-- 133,851
