@@ -1,14 +1,16 @@
 -- Which category has the highest success percentage?
 SELECT
     category,
-    COUNT(state)
+    COUNT(category) AS 'total_projects',
+    COUNT(CASE WHEN state = 'Successful' THEN 1 END) AS 'total_successful',
+    ROUND((COUNT(CASE WHEN state = 'Successful' THEN 1 END) * 100.8) / COUNT(category), 2) AS 'percent_successful'
 FROM projects
 GROUP BY 1
-ORDER BY 2 DESC
+ORDER BY 4 DESC
 LIMIT 1;
 /*
-category, COUNT(state)
-Film & Video, 62694
+category, total_projects, total_successful, percent_successful
+Dance, 3767, 2338, 62.56
 */
 
 -- How many projects have been successful?
