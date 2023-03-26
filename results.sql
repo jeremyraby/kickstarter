@@ -13,13 +13,11 @@ category, total_projects, total_successful, percent_successful
 Dance, 3767, 2338, 62.56
 */
 
--- How many projects have been successful?
-SELECT
-    COUNT(state)
-FROM projects
-WHERE state = 'Successful';
-
--- 133,851
+/*
+How many projects have been successful?
+category, total_successful
+Dance, 2338
+*/
 
 -- What project with a goal over $1,000 USD, had the biggest Goal Completion % (Pledged / Goal)? 
 
